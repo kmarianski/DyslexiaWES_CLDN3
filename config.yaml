@@ -1,0 +1,42 @@
+
+# config.yaml: Configuration for the WES pipeline
+
+# Threads for parallel processing
+threads: 32
+
+# Reference genome
+reference: "/reference/genome.fasta"
+
+# Known sites for base recalibration
+known_sites: "/reference/known_sites.vcf.gz"
+
+# Adapter file for Trimmomatic
+adapter: "/trimmomatic/TruSeq3-PE-2.fa"
+
+# Annovar database
+annovar_db: "/annovar/db"
+
+# Directories for results and logs
+directories:
+  - trimmomatic
+  - bwa
+  - merged_bams
+  - replace_rg
+  - dedup
+  - recal
+  - deepvariant
+  - annovar
+  - annovar/multianno_csv
+
+log_dirs:
+  - trimmomatic
+  - bwa
+  - merged_bams
+  - picard/replace_rg
+  - picard/dedup
+  - picard/recal_table
+  - picard/recal_apply
+  - samtools/index
+  - deepvariant
+  - vcftools/concat
+  - slurm
